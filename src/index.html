@@ -4,22 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./sass/index.scss" />
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
-
     <!-- header -->
     <include src=""></include>
 
     <main>
-      <include src=""></include>
-      <include src=""></include>
+      <include src="./partials/anim.html"></include>
+      <include src="./partials/swiper.html"></include>
     </main>
 
     <!-- footer -->
     <include src=""></include>
+    <include src="./partials/modals.html"></include>
+
+
+    <!-- animate -->
+    <script src="./js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- /animate -->
+
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        effect: 'cube',
+        // loop: true,
+        grabCursor: true,
+        cubeEffect: {
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      });
+    </script>
+    <!-- <script>
+      var swiper = new Swiper('.mySwiper1', {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      }); -->
+    </script>
+    <!-- /swiper -->
   </body>
 </html>
